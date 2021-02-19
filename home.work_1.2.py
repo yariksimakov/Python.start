@@ -12,19 +12,35 @@ for i in range(1, 1001, 2):
     my_list.append(i ** 3)
 print(my_list)
 
-my_sum = []
-for index in my_list:
-    if index % 7 == 0:
-        my_sum.append(index)
-print(f"{sum(my_sum)} - summa")
+new_list = []
+for el, i in enumerate(my_list):
+    my_sum = []
+    while True:
+        num = i % 10
+        i //= 10
+        my_sum.append(num)
+        if i == 0:
+            break
+    if sum(my_sum) % 7 == 0:
+        new_list.append(my_list[el])
+print("{} - summa ".format(sum(new_list)))
+
 
 for i, number in enumerate(my_list):
     number += 17
     my_list[i] = number
 print(my_list)
 
-new_sum = 0
-for number in my_list:
-    if number % 7 == 0:
-        new_sum += number
-print(f"{new_sum} - summa")
+
+new_list = []
+for el, i in enumerate(my_list):
+    my_sum = []
+    while True:
+        num = i % 10
+        i //= 10
+        my_sum.append(num)
+        if i == 0:
+            break
+    if sum(my_sum) % 7 == 0:
+        new_list.append(my_list[el])
+print(f"{sum(new_list)} - summa")
